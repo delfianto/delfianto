@@ -9,15 +9,15 @@ I believe in the power of open source and knowledge sharing. Whether it’s cont
 ## 🛠️ Tech Stack & Interests
 
 - **Languages & Frameworks:**  
-  Java, Groovy, Kotlin | Spring Boot, Micronaut
+  Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) | [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/)
 - **Scripting:**  
   ZSH, Ruby
 - **Automation & CLI tools:**  
-  Currently exploring **Rust** for personal CLI and automation projects.
+  Currently exploring **[Rust](https://www.rust-lang.org)** for personal CLI and automation projects.
 - **Linux & OSS:**  
-  Proud Linux user and open-source/free software enthusiast.
+  Proud Linux user since early 2000 and open-source/free software enthusiast.
 - **Homelab & Self-hosting:**  
-  I love tinkering with mini homelab setups and running self-hosted services on my machines.
+  I love tinkering with mini homelab setups and running various self-hosted services on my machines.
 
 ## 🚀 Featured Projects
 
@@ -37,7 +37,7 @@ Here are a few repositories I'm excited about (coming soon!):
 ## 🤖 Fun Facts
 
 - Cat lover
-- I'm a big fan of Ghost 🤘
+- I'm a big fan of [Ghost](https://ghost-official.com) 🤘
 
 ## 🔗 Connect with Me
 
