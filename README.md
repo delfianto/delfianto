@@ -2,6 +2,10 @@
 
 I'm a passionate **Software Engineer** who loves building robust solutions on the JVM stack—primarily with **Java**, **Groovy**, and a touch of **Kotlin**. My main playgrounds are **Spring Boot** and **Micronaut**, but I also enjoy scripting with **ZSH** and **Ruby**.
 
+> “Sharing our collective knowledge benefits us all.”
+
+I believe in the power of open source and knowledge sharing. Whether it’s contributing code, helping others, or learning something new, I’m always eager to be part of the community.
+
 ## 🛠️ Tech Stack & Interests
 
 - **Languages & Frameworks:**  
@@ -30,12 +34,6 @@ Here are a few repositories I'm excited about (coming soon!):
 
 *(Links will go live once repositories are public!)*
 
-## 🚀 Philosophy
-
-> “Sharing our collective knowledge benefits us all.”
-
-I believe in the power of open source and knowledge sharing. Whether it’s contributing code, helping others, or learning something new, I’m always eager to be part of the community.
-
 ## 🤖 Fun Facts
 
 - Cat lover
@@ -44,9 +42,3 @@ I believe in the power of open source and knowledge sharing. Whether it’s cont
 ## 🔗 Connect with Me
 
 - [LinkedIn](https://linkedin.com/in/delfianto)
-
----
-
-<!--
-Want to see some of my favorite projects or get in touch? Feel free to reach out!
--->
