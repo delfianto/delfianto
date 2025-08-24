@@ -37,8 +37,4 @@ Here are a few repositories I'm excited about (coming soon!):
 ## 🤖 Fun Facts
 
 - Cat lover
-- I'm a big fan of [Ghost](https://ghost-official.com) 🤘
-
-## 🔗 Connect with Me
-
-- [LinkedIn](https://linkedin.com/in/delfianto)
+- I'm a big fan of [Ghost](https://ghost-official.com)
