@@ -1,40 +1,43 @@
-# 👋 Hi, I'm Dewey!
+---
 
-I'm a passionate **Software Engineer** who loves building robust solutions on the JVM stack—primarily with **Java**, **Groovy**, and a touch of **Kotlin**. My main playgrounds are **Spring Boot** and **Micronaut**, but I also enjoy scripting with **ZSH** and **Ruby**.
+# 👋 Hey there, I’m Dewey!
 
-> “Sharing our collective knowledge benefits us all.”
+I build stuff, break stuff, automate stuff, and occasionally write funny sarcastic comments in code reviews and commit messages. Linux is my home 🐧, the JVM is where I spill coffee, sweat, and blood ☕💀, Rust is my shiny new toy, and cats… well, cats rule everything.
 
-I believe in the power of open source and knowledge sharing. Whether it’s contributing code, helping others, or learning something new, I’m always eager to be part of the community.
+---
 
-## 🛠️ Tech Stack & Interests
+## 🛠️ Tools & Gizmos
 
-- **Languages & Frameworks:**  
-  Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) | [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/)
-- **Scripting:**  
-  ZSH, Ruby
-- **Automation & CLI tools:**  
-  Currently exploring **[Rust](https://www.rust-lang.org)** for personal CLI and automation projects.
-- **Linux & OSS:**  
-  Proud Linux user since early 2000 and open-source/free software enthusiast.
-- **Homelab & Self-hosting:**  
-  I love tinkering with mini homelab setups and running various self-hosted services on my machines.
+* **Languages & Frameworks:**
+  Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) | [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/) — for all the boring enterprise stuff
+* **Scripting & Hacks:**
+  ZSH, Ruby — because why not automate your coffee machine too? ☕
+* **Automation & CLI Projects:**
+  Currently exploring **[Rust](https://www.rust-lang.org)** for over-engineered but extremely satisfying CLI tools
+* **Linux & OSS:**
+  Linux user since forever, started with Slackware, ended up with EndeavourOS
+* **Homelab & Self-Hosting:**
+  Mini homelabs are my playgrounds, self-hosting is my therapy
 
-## 🚀 Featured Projects
+---
 
-Here are a few repositories I'm excited about (coming soon!):
+## 🚀 Show & Tell
 
-- [`compose`](https://github.com/delfianto/compose)  
-  Collection of compose files, configs, and various scripts that I use in my self-hosted environment.
+Here are some toys I’ve been tinkering with:
+* [`compose`](https://github.com/delfianto/compose)
+  A magical box of Docker compose files, configs, and scripts to wrangle my self-hosted chaos.
+* [`eppcli`](https://github.com/delfianto/eppcli)
+  Rusty little tool to tweak AMD Zen EPP profiles. Tiny project, massive nerd cred. ⚡
+* [`hyprdrive`](https://github.com/delfianto/hyprdrive)
+  Over-engineered CLI launcher for Hyprland. I may have gone a bit too far here… but it’s fun! 🚀
+* (New links will be added once I stop hiding them from the world!)*
 
-- [`eppcli`](https://github.com/delfianto/eppcli)  
-  A CLI tool for managing AMD Zen EPP (Energy Performance Preference) profiles. I use this small project to dip my toes into Rust.
+---
 
-- [`hyprdrive`](https://github.com/delfianto/hyprdrive)  
-  Another learning medium to try more advanced features in Rust. This is perhaps a somewhat over-engineered CLI-based process launcher that I built for my Hyprland environment.
+## 🤖 Fun Shenanigans
+* 🐱 Cat enthusiast, dedicated servant to our glorious feline overlords!
+* 🤘 I'm a [huge metal fan](https://preview.redd.it/gx13qy30zv041.jpg?width=640&crop=smart&auto=webp&s=6337c5b648e8c004a739a257530d313e3c62f03a) but I also really love [Ghost](https://ghost-official.com)
+* 💻 CRPGs & Sci-Fi junkie
+* 🧩 [Obsidian.md](https://obsidian.md/) is an endless rabbit hole
 
-*(Links will go live once repositories are public!)*
-
-## 🤖 Fun Facts
-
-- Cat lover
-- I'm a big fan of [Ghost](https://ghost-official.com)
+---
