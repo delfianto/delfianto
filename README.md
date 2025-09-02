@@ -23,7 +23,7 @@ Here are some toys I’ve been tinkering with:
 * [`eppcli`](https://github.com/delfianto/eppcli)
   Rusty little tool to tweak AMD Zen EPP profiles.
 * [`hyprdrive`](https://github.com/delfianto/hyprdrive)
-  Over-engineered CLI launcher for Hyprland. I may have gone a bit too far here… but it’s fun! 🚀
+  CLI app launcher for Hyprland. I may have gone a bit too far here… but it’s fun! 🚀
 * New links will be added once I stop hiding them from the world!
 
 ## 🤖 Fun Shenanigans
