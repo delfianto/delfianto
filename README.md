@@ -2,8 +2,6 @@
 
 I build stuff, break stuff, automate stuff, and occasionally write funny sarcastic comments in code reviews and commit messages. Linux is my home 🐧, the JVM is where I spill coffee, sweat, and blood ☕💀, Rust is my shiny new toy, and cats… well, cats rule everything.
 
----
-
 ## 🛠️ Tools & Gizmos
 
 * **Languages & Frameworks:**
@@ -17,8 +15,6 @@ I build stuff, break stuff, automate stuff, and occasionally write funny sarcast
 * **Homelab & Self-Hosting:**
   Mini homelabs are my playgrounds, self-hosting is my therapy
 
----
-
 ## 🚀 Show & Tell
 
 Here are some toys I’ve been tinkering with:
@@ -30,12 +26,8 @@ Here are some toys I’ve been tinkering with:
   Over-engineered CLI launcher for Hyprland. I may have gone a bit too far here… but it’s fun! 🚀
 * (New links will be added once I stop hiding them from the world!)*
 
----
-
 ## 🤖 Fun Shenanigans
 * 🐱 Cat enthusiast, dedicated servant to our glorious feline overlords!
 * 🤘 I'm a [huge metal fan](https://preview.redd.it/gx13qy30zv041.jpg?width=640&crop=smart&auto=webp&s=6337c5b648e8c004a739a257530d313e3c62f03a) but I also really love [Ghost](https://ghost-official.com)
 * 💻 CRPGs & Sci-Fi junkie
 * 🧩 [Obsidian.md](https://obsidian.md/) is an endless rabbit hole
-
----
