@@ -20,7 +20,7 @@ I build stuff, break stuff, automate stuff, and occasionally write funny sarcast
 Here are some toys I’ve been tinkering with:
 * [`compose`](https://github.com/delfianto/compose)
   A magical box of Docker compose files, configs, and scripts to wrangle my self-hosted chaos.
-* [`eppcli`](https://github.com/delfianto/eppcli)
+* [`zentools`](https://github.com/delfianto/zentools)
   Rusty little tool to tweak AMD Zen EPP profiles.
 * [`hyprdrive`](https://github.com/delfianto/hyprdrive)
   CLI app launcher for Hyprland. I may have gone a bit too far here… but it’s fun! 🚀
