@@ -1,6 +1,6 @@
 # 👋 Hey there, I’m Dewey!
 
-I build stuff, break stuff, automate stuff, and occasionally write funny sarcastic comments in code reviews and commit messages. Linux is my home 🐧, the JVM is where I spill coffee, sweat, and blood ☕💀, Rust is my shiny new toy, and cats… well, cats rule everything.
+I build stuff, break stuff, automate stuff, and occasionally write funny sarcastic comments in code reviews and commit messages. Linux is my home, the JVM is where I spill coffee, sweat, and blood, Rust is my shiny new toy, and cats… well, cats rule everything.
 
 ## 🛠️ Tools & Gizmos
 
