@@ -22,9 +22,6 @@ Here are some toys I’ve been tinkering with:
   A magical box of Docker compose files, configs, and scripts to wrangle my self-hosted chaos.
 * [`zentools`](https://github.com/delfianto/zentools)
   Rusty little tool to tweak AMD Zen EPP profiles.
-* [`hyprdrive`](https://github.com/delfianto/hyprdrive)
-  CLI app launcher for Hyprland. I may have gone a bit too far here… but it’s fun! 🚀
-* New links will be added once I stop hiding them from the world!
 
 ## 🤖 Fun Shenanigans
 
