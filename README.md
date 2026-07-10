@@ -19,7 +19,7 @@ I build stuff, break stuff, automate stuff, and occasionally write funny sarcast
 
 Here are some toys I’ve been tinkering with:
 * [`the-bannered-mare`](https://github.com/delfianto/the-bannered-mare)
-  Selfhosyed RP platfrom powered by local or cloud model.
+  Selfhosted RP platfrom powered by local or cloud model.
 * [`tei-proxy`](https://github.com/delfianto/tei-proxy)
   Lightweight proxy that teaches Open WebUI's reranker to speak fluent Hugging Face TEI.
 * [`zsh`](https://github.com/delfianto/zsh)
