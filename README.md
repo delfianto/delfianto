@@ -23,7 +23,7 @@ A note-taking app with two thousand community plugins clearly needed a few more 
 | [`advanced-infobox`](https://github.com/delfianto/advanced-infobox) | Wikipedia-style infoboxes for your notes. Basically a Fandom wiki minus the 47 ads. |
 | [`inkwell`](https://github.com/delfianto/inkwell) | Longform writing plugin for the novel I’m definitely finishing this year (source: me, every January). |
 | [`schema-form`](https://github.com/delfianto/schema-form) | Schema-driven modal forms, because typing frontmatter by hand is how you end up with `tags: [tag, tags, Tags, TAGS]`. |
-| [`smart-typography`](https://github.com/delfianto/smart-typography) | Curly quotes, em dashes, and ellipses as you type. Yes, I write my own em dashes — well, the plugin does, but it’s MY plugin. |
+| [`smart-typography-refresh`](https://github.com/delfianto/smart-typography-refresh) | Curly quotes, em dashes, and ellipses as you type. Yes, I write my own em dashes — well, the plugin does, but it’s MY plugin. |
 
 ### 🐧 Linux CLI Tools
 
