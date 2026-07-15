@@ -7,13 +7,13 @@ Oh, and you won’t find any skill bars here. I refuse to declare myself “90% 
 ## 🛠️ Tools & Gizmos
 
 * **Languages & Frameworks:**
-  Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) | [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/) — for all the boring enterprise stuff
+  Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) | [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/) — paying the bills one `@Autowired` at a time
 * **Scripting & Hacks:**
   ZSH, Python — because why not automate your coffee machine too? ☕
 * **Automation & CLI Projects:**
-  Currently exploring **[Rust](https://www.rust-lang.org)** for over-engineered but extremely satisfying CLI tools
+  Currently exploring **[Rust](https://www.rust-lang.org)** — the borrow checker and I are in couples therapy, and the therapist says we’re making real progress
 * **Linux & OSS:**
-  Linux user since forever, started with Slackware, currently riding CachyOS
+  Linux user since forever — started with Slackware back when “dependency resolution” meant *you*, currently riding CachyOS
 * **Homelab & Self-Hosting:**
   I self-host way too many things — it's cheaper than the cloud, right? (narrator: it was not)
 
