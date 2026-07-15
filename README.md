@@ -2,20 +2,20 @@
 
 I build stuff, break stuff, automate stuff, and occasionally write funny sarcastic comments in code reviews and commit messages. Linux is my home, the JVM is where I spill coffee, sweat, and blood, Rust is my shiny new toy, and cats… well, cats rule everything.
 
-Oh, and you won’t find any skill bars here. I refuse to declare myself “90% Java” or “85% Python” — competence is not a download progress bar, and the missing 15% is exception handling. For me, it’s always exception handling.
+Oh, and there are no skill bars here. I’m not going to tell you I’m “90% Java” or “85% Python”, because competence is not a download progress bar. Everyone knows the missing 15% is exception handling anyway.
 
 ## 🛠️ Tools & Gizmos
 
 * **Languages & Frameworks:**
-  Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) | [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/) — paying the bills one `@Autowired` at a time
+  Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) | [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/), paying the bills one `@Autowired` at a time
 * **Scripting & Hacks:**
   ZSH, Python — because why not automate your coffee machine too? ☕
 * **Automation & CLI Projects:**
-  Currently exploring **[Rust](https://www.rust-lang.org)** — the borrow checker and I are in couples therapy, and the therapist says we’re making real progress
+  Currently exploring **[Rust](https://www.rust-lang.org)**. The borrow checker and I are in couples therapy, and the therapist says we’re making real progress
 * **Linux & OSS:**
-  Linux user since forever — started with Slackware back when “dependency resolution” meant *you*, currently riding CachyOS
+  Linux user since forever. Started with Slackware back when “dependency resolution” meant you, personally, and currently riding CachyOS
 * **Homelab & Self-Hosting:**
-  I self-host way too many things — it's cheaper than the cloud, right? (narrator: it was not)
+  I self-host way too many things because it's cheaper than the cloud, right? (narrator: it was not)
 
 ## 🚀 Show & Tell
 
@@ -26,20 +26,20 @@ Some toys I’ve been tinkering with, neatly organized into sections so it looks
 A note-taking app with two thousand community plugins clearly needed a few more of mine.
 
 * [`advanced-infobox`](https://github.com/delfianto/advanced-infobox)
-  Wikipedia-style infoboxes for your notes — all the bureaucratic elegance of a Fandom wiki, none of the 47 ads.
+  Wikipedia-style infoboxes for your notes. Basically a Fandom wiki minus the 47 ads.
 * [`inkwell`](https://github.com/delfianto/inkwell)
-  Longform writing plugin for the novel I will absolutely finish this year (source: me, every year, since forever).
+  Longform writing plugin for the novel I’m definitely finishing this year (source: me, every January).
 * [`schema-form`](https://github.com/delfianto/schema-form)
   Schema-driven modal forms, because typing frontmatter by hand is how you end up with `tags: [tag, tags, Tags, TAGS]`.
 * [`smart-typography`](https://github.com/delfianto/smart-typography)
-  Curly quotes, em dashes, and ellipses as you type — yes, I write my own em dashes, no, I am not a Clanker.
+  Curly quotes, em dashes, and ellipses as you type. Yes, I write my own em dashes — well, the plugin does, but it’s MY plugin.
 
 ### 🐧 Linux CLI Tools
 
 Over-engineered Rust solutions to problems a bash one-liner solved in 2009. No regrets.
 
 * [`zsh`](https://github.com/delfianto/zsh)
-  My ZSH config and helper scripts — the shell equivalent of a heavily modded Skyrim install.
+  My ZSH config and helper scripts, aka the shell equivalent of a heavily modded Skyrim install.
 * [`dotlinker`](https://github.com/delfianto/dotlinker)
   Auto-symlinks my dotfiles. I spent a week automating a task I do once a year. Worth it.
 * [`media-forge`](https://github.com/delfianto/media-forge)
@@ -47,9 +47,9 @@ Over-engineered Rust solutions to problems a bash one-liner solved in 2009. No r
 * [`zentools`](https://github.com/delfianto/zentools)
   Tells my AMD Zen CPU whether to be a space heater or a responsible adult. ("EPP profile management," technically.)
 * [`nvprime`](https://github.com/delfianto/nvprime)
-  Minimalistic game launcher for PRIME offloading — politely wakes the NVIDIA dGPU from its nap whenever a game shows up.
+  Minimalistic game launcher for PRIME offloading. Politely wakes the NVIDIA dGPU from its nap whenever a game shows up.
 * [`pika`](https://github.com/delfianto/pika)
-  Experimental memory scanner for Steam Proton games. Single-player only — I cheat, but I have honor.
+  Experimental memory scanner for Steam Proton games. Single-player only. I cheat, but I have honor.
 * [`wsmr`](https://github.com/delfianto/wsmr)
   Wayland Session Manager in Rust. Vowels sold separately.
 
@@ -60,16 +60,16 @@ Where uptime is a suggestion and every service is exactly one YAML indent away f
 * [`compose`](https://github.com/delfianto/compose)
   A magical box of Docker compose files, configs, and scripts to wrangle my self-hosted chaos. 10% infrastructure, 90% coping mechanism.
 * [`compose-utils`](https://github.com/delfianto/compose-utils)
-  In the grim darkness of my homelab, there is only `docker compose up`. Startup dependencies were pure Chaos, so I unleashed systemd upon them like the Emperor's finest — heresy purged, machine spirit appeased.
+  In the grim darkness of my homelab, there is only `docker compose up`. Startup dependencies were pure Chaos, so I unleashed systemd upon them like the Emperor's finest. Heresy purged, machine spirit appeased.
 * [`docker-conf`](https://github.com/delfianto/docker-conf)
   Custom docker config and CLI plugins, because the default docker CLI output is total ass and someone had to say it.
 
 ### 🤖 Clanker Corner
 
-Paying per token is scary, but buying GPUs is *an investment*. Meanwhile I yearn for the RTX Pro 6000 Blackwell the way medieval peasants yearned for the sea — from a great distance, fully aware I will die without ever touching one.
+Paying per token is scary, but buying GPUs is *an investment*. Meanwhile I yearn for the RTX Pro 6000 Blackwell the way medieval peasants yearned for the sea: from a great distance, knowing I’ll probably die without ever touching one.
 
 * [`the-bannered-mare`](https://github.com/delfianto/the-bannered-mare)
-  “What if we rebuild SillyTavern on a modern stack, how hard could it be?” Turns out building the tavern is considerably harder than getting drunk in it — I used to be an adventurer like you, then I took a rewrite to the knee.
+  “What if we rebuild SillyTavern on a modern stack, how hard could it be?” Turns out building the tavern is way harder than getting drunk in it. I used to be an adventurer like you, then I took a rewrite to the knee.
 * [`tei-proxy`](https://github.com/delfianto/tei-proxy)
   Lightweight proxy that teaches Open WebUI's reranker to speak fluent Hugging Face TEI.
 * [`llama.rs`](https://github.com/delfianto/llama.rs)
@@ -77,13 +77,14 @@ Paying per token is scary, but buying GPUs is *an investment*. Meanwhile I yearn
 * [`ik_llama.cpp-docker`](https://github.com/delfianto/ik_llama.cpp-docker)
   Zen 5 optimized ik_llama.cpp builds, squeezing tokens out of a CPU that never consented to any of this.
 * [`sd-webui-forge-docker`](https://github.com/delfianto/sd-webui-forge-docker)
-  Stable Diffusion WebUI Forge in a Docker box — infinite cat pictures, finite VRAM.
+  Stable Diffusion WebUI Forge in a Docker box. Infinite cat pictures, finite VRAM.
 * [`opnsense-skills`](https://github.com/delfianto/opnsense-skills)
   Skills for letting your Clanker configure and debug OPNsense firewall rules. What could possibly go wrong?
 
 ## 🎲 Fun Shenanigans
 
-* 🎮 CRPG & Sci-Fi junkie — yes I read every lore book, yes I hoard potions “for the final boss,” no I have never used a single one
-* 🐱 Dedicated servant to our glorious feline overlords — a cat is on my keyboard right now, and it explains at least three of my commits
+* 🎮 CRPG & Sci-Fi junkie. I read every lore book, hoard every potion “for the final boss,” then beat the final boss without using a single one
+* 🛒 My Steam backlog technically qualifies as a retirement plan. I keep contributing every sale and plan to start withdrawing sometime in my sixties
+* 🐱 Dedicated servant to our glorious feline overlords. There’s a cat on my keyboard right now, which explains at least three of my commits
 * 🤘 I'm a [huge metal fan](https://preview.redd.it/gx13qy30zv041.jpg?width=640&crop=smart&auto=webp&s=6337c5b648e8c004a739a257530d313e3c62f03a) but I also really love [Ghost](https://ghost-official.com)
-* 🕳️ [Obsidian.md](https://obsidian.md/) is an endless rabbit hole — I spend more time perfecting my note-taking system than actually taking notes, and yes, I have a note about that
+* 🕳️ [Obsidian.md](https://obsidian.md/) is an endless rabbit hole. I spend more time perfecting my note-taking system than actually taking notes, and somewhere in the vault there’s a note about that
