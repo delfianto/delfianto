@@ -69,7 +69,7 @@ Where uptime is a suggestion and every service is exactly one YAML indent away f
 Paying per token is scary, but buying GPUs is *an investment*. Meanwhile I yearn for the RTX Pro 6000 Blackwell the way medieval peasants yearned for the sea — from a great distance, fully aware I will die without ever touching one.
 
 * [`the-bannered-mare`](https://github.com/delfianto/the-bannered-mare)
-  Self-hosted RP platform powered by local or cloud models. The tavern is always open, and the bard is a Clanker with infinite lore.
+  “What if we rebuild SillyTavern on a modern stack, how hard could it be?” Turns out building the tavern is considerably harder than getting drunk in it — I used to be an adventurer like you, then I took a rewrite to the knee.
 * [`tei-proxy`](https://github.com/delfianto/tei-proxy)
   Lightweight proxy that teaches Open WebUI's reranker to speak fluent Hugging Face TEI.
 * [`llama.rs`](https://github.com/delfianto/llama.rs)
