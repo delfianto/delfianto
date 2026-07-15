@@ -6,13 +6,9 @@ Oh, and there are no skill bars here. I’m not going to tell you I’m “90% J
 
 ## 🛠️ Tools & Gizmos
 
-| Category | The situation |
-| --- | --- |
-| **Languages & Frameworks** | Java, [Groovy](https://groovy-lang.org), [Kotlin](https://kotlinlang.org) \| [Spring Boot](https://spring.io/projects/spring-boot), [Micronaut](https://micronaut.io/), paying the bills one `@Autowired` at a time |
-| **Scripting & Hacks** | ZSH, Python, because why not automate your coffee machine too? ☕ |
-| **Automation & CLI Projects** | Currently exploring **[Rust](https://www.rust-lang.org)**. The borrow checker and I are in couples therapy, and the therapist says we’re making real progress |
-| **Linux & OSS** | Linux user since forever. Started with Slackware back when “dependency resolution” meant you, personally, and currently riding CachyOS |
-| **Homelab & Self-Hosting** | I self-host way too many things because it's cheaper than the cloud, right? (narrator: it was not) |
+By day I write Java, [Groovy](https://groovy-lang.org), and [Kotlin](https://kotlinlang.org) on [Spring Boot](https://spring.io/projects/spring-boot) and [Micronaut](https://micronaut.io/), paying the bills one `@Autowired` at a time. After hours it's mostly ZSH and Python, scripting anything that sits still long enough to be automated, up to and including the coffee machine. ☕ Lately [Rust](https://www.rust-lang.org) has been pulling me in. The borrow checker and I are in couples therapy, and the therapist says we're making real progress.
+
+All of this happens on Linux, where I've lived since the Slackware days when "dependency resolution" meant you, personally. These days I ride CachyOS, and somewhere behind me a homelab hums along, self-hosting way too many things because it's cheaper than the cloud, right? (narrator: it was not)
 
 ## 🚀 Show & Tell
 
