@@ -81,9 +81,9 @@ Paying per token is scary, but buying GPUs is *an investment*. Meanwhile I yearn
 * [`opnsense-skills`](https://github.com/delfianto/opnsense-skills)
   Skills for letting your Clanker configure and debug OPNsense firewall rules. What could possibly go wrong?
 
-## 🤖 Fun Shenanigans
+## 🎲 Fun Shenanigans
 
-* 💻 CRPGs & Sci-Fi junkie
-* 🐱 Cat enthusiast, dedicated servant to our glorious feline overlords!
+* 🎮 CRPG & Sci-Fi junkie — yes I read every lore book, yes I hoard potions “for the final boss,” no I have never used a single one
+* 🐱 Dedicated servant to our glorious feline overlords — a cat is on my keyboard right now, and it explains at least three of my commits
 * 🤘 I'm a [huge metal fan](https://preview.redd.it/gx13qy30zv041.jpg?width=640&crop=smart&auto=webp&s=6337c5b648e8c004a739a257530d313e3c62f03a) but I also really love [Ghost](https://ghost-official.com)
-* 🧩 [Obsidian.md](https://obsidian.md/) is an endless rabbit hole
+* 🕳️ [Obsidian.md](https://obsidian.md/) is an endless rabbit hole — I spend more time perfecting my note-taking system than actually taking notes, and yes, I have a note about that
