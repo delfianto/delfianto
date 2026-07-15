@@ -25,14 +25,12 @@ Some toys I’ve been tinkering with, neatly organized into sections so it looks
 
 A note-taking app with two thousand community plugins clearly needed a few more of mine.
 
-* [`advanced-infobox`](https://github.com/delfianto/advanced-infobox)
-  Wikipedia-style infoboxes for your notes. Basically a Fandom wiki minus the 47 ads.
-* [`inkwell`](https://github.com/delfianto/inkwell)
-  Longform writing plugin for the novel I’m definitely finishing this year (source: me, every January).
-* [`schema-form`](https://github.com/delfianto/schema-form)
-  Schema-driven modal forms, because typing frontmatter by hand is how you end up with `tags: [tag, tags, Tags, TAGS]`.
-* [`smart-typography`](https://github.com/delfianto/smart-typography)
-  Curly quotes, em dashes, and ellipses as you type. Yes, I write my own em dashes — well, the plugin does, but it’s MY plugin.
+| Plugin | What it does |
+| --- | --- |
+| [`advanced-infobox`](https://github.com/delfianto/advanced-infobox) | Wikipedia-style infoboxes for your notes. Basically a Fandom wiki minus the 47 ads. |
+| [`inkwell`](https://github.com/delfianto/inkwell) | Longform writing plugin for the novel I’m definitely finishing this year (source: me, every January). |
+| [`schema-form`](https://github.com/delfianto/schema-form) | Schema-driven modal forms, because typing frontmatter by hand is how you end up with `tags: [tag, tags, Tags, TAGS]`. |
+| [`smart-typography`](https://github.com/delfianto/smart-typography) | Curly quotes, em dashes, and ellipses as you type. Yes, I write my own em dashes — well, the plugin does, but it’s MY plugin. |
 
 ### 🐧 Linux CLI Tools
 
