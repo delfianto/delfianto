@@ -2,6 +2,8 @@
 
 I build stuff, break stuff, automate stuff, and occasionally write funny sarcastic comments in code reviews and commit messages. Linux is my home, the JVM is where I spill coffee, sweat, and blood, Rust is my shiny new toy, and cats… well, cats rule everything.
 
+Oh, and you won’t find any skill bars here. I refuse to declare myself “90% Java” or “85% Python” — competence is not a download progress bar, and the missing 15% is exception handling. For me, it’s always exception handling.
+
 ## 🛠️ Tools & Gizmos
 
 * **Languages & Frameworks:**
@@ -17,17 +19,67 @@ I build stuff, break stuff, automate stuff, and occasionally write funny sarcast
 
 ## 🚀 Show & Tell
 
-Here are some toys I’ve been tinkering with:
-* [`the-bannered-mare`](https://github.com/delfianto/the-bannered-mare)
-  Selfhosted RP platfrom powered by local or cloud model.
-* [`tei-proxy`](https://github.com/delfianto/tei-proxy)
-  Lightweight proxy that teaches Open WebUI's reranker to speak fluent Hugging Face TEI.
+Some toys I’ve been tinkering with, neatly organized into sections so it looks like there was a plan. There was no plan.
+
+### 🧩 Obsidian Plugins
+
+A note-taking app with two thousand community plugins clearly needed a few more of mine.
+
+* [`advanced-infobox`](https://github.com/delfianto/advanced-infobox)
+  Wikipedia-style infoboxes for your notes — all the bureaucratic elegance of a Fandom wiki, none of the 47 ads.
+* [`inkwell`](https://github.com/delfianto/inkwell)
+  Longform writing plugin for the novel I will absolutely finish this year (source: me, every year, since forever).
+* [`schema-form`](https://github.com/delfianto/schema-form)
+  Schema-driven modal forms, because typing frontmatter by hand is how you end up with `tags: [tag, tags, Tags, TAGS]`.
+* [`smart-typography`](https://github.com/delfianto/smart-typography)
+  Curly quotes, em dashes, and ellipses as you type — yes, I write my own em dashes, no, I am not a Clanker.
+
+### 🐧 Linux CLI Tools
+
+Over-engineered Rust solutions to problems a bash one-liner solved in 2009. No regrets.
+
 * [`zsh`](https://github.com/delfianto/zsh)
   My ZSH config and helper scripts — the shell equivalent of a heavily modded Skyrim install.
-* [`compose`](https://github.com/delfianto/compose)
-  A magical box of Docker compose files, configs, and scripts to wrangle my self-hosted chaos.
+* [`dotlinker`](https://github.com/delfianto/dotlinker)
+  Auto-symlinks my dotfiles. I spent a week automating a task I do once a year. Worth it.
+* [`media-forge`](https://github.com/delfianto/media-forge)
+  Batch media converter that talks to ffmpeg so I never have to remember which of its 9,000 flags I actually need.
 * [`zentools`](https://github.com/delfianto/zentools)
-  Rusty little tool to tweak AMD Zen EPP profiles.
+  Tells my AMD Zen CPU whether to be a space heater or a responsible adult. ("EPP profile management," technically.)
+* [`nvprime`](https://github.com/delfianto/nvprime)
+  Minimalistic game launcher for PRIME offloading — politely wakes the NVIDIA dGPU from its nap whenever a game shows up.
+* [`pika`](https://github.com/delfianto/pika)
+  Experimental memory scanner for Steam Proton games. Single-player only — I cheat, but I have honor.
+* [`wsmr`](https://github.com/delfianto/wsmr)
+  Wayland Session Manager in Rust. Vowels sold separately.
+
+### 🐳 Docker & Self-Hosting
+
+Where uptime is a suggestion and every service is exactly one YAML indent away from disaster.
+
+* [`compose`](https://github.com/delfianto/compose)
+  A magical box of Docker compose files, configs, and scripts to wrangle my self-hosted chaos. 10% infrastructure, 90% coping mechanism.
+* [`compose-utils`](https://github.com/delfianto/compose-utils)
+  In the grim darkness of my homelab, there is only `docker compose up`. Startup dependencies were pure Chaos, so I unleashed systemd upon them like the Emperor's finest — heresy purged, machine spirit appeased.
+* [`docker-conf`](https://github.com/delfianto/docker-conf)
+  Custom docker config and CLI plugins, because the default docker CLI output is total ass and someone had to say it.
+
+### 🤖 Clanker Corner
+
+Paying per token is scary, but buying GPUs is *an investment*. Meanwhile I yearn for the RTX Pro 6000 Blackwell the way medieval peasants yearned for the sea — from a great distance, fully aware I will die without ever touching one.
+
+* [`the-bannered-mare`](https://github.com/delfianto/the-bannered-mare)
+  Self-hosted RP platform powered by local or cloud models. The tavern is always open, and the bard is a Clanker with infinite lore.
+* [`tei-proxy`](https://github.com/delfianto/tei-proxy)
+  Lightweight proxy that teaches Open WebUI's reranker to speak fluent Hugging Face TEI.
+* [`llama.rs`](https://github.com/delfianto/llama.rs)
+  Wraps llama.cpp in an Ollama-like API. We have Ollama at home. The Ollama at home: 🦀
+* [`ik_llama.cpp-docker`](https://github.com/delfianto/ik_llama.cpp-docker)
+  Zen 5 optimized ik_llama.cpp builds, squeezing tokens out of a CPU that never consented to any of this.
+* [`sd-webui-forge-docker`](https://github.com/delfianto/sd-webui-forge-docker)
+  Stable Diffusion WebUI Forge in a Docker box — infinite cat pictures, finite VRAM.
+* [`opnsense-skills`](https://github.com/delfianto/opnsense-skills)
+  Skills for letting your Clanker configure and debug OPNsense firewall rules. What could possibly go wrong?
 
 ## 🤖 Fun Shenanigans
 
