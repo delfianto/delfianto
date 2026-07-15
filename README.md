@@ -6,9 +6,9 @@ Oh, and there are no skill bars here. I’m not going to tell you I’m “90% J
 
 ## 🛠️ Tools & Gizmos
 
-By day I write Java, [Groovy](https://groovy-lang.org), and [Kotlin](https://kotlinlang.org) on [Spring Boot](https://spring.io/projects/spring-boot) and [Micronaut](https://micronaut.io/), paying the bills one `@Autowired` at a time. After hours it's mostly ZSH and Python, scripting anything that sits still long enough to be automated, up to and including the coffee machine. ☕ Lately [Rust](https://www.rust-lang.org) has been pulling me in. The borrow checker and I are in couples therapy, and the therapist says we're making real progress.
+By day I write Java, [Groovy](https://groovy-lang.org), and [Kotlin](https://kotlinlang.org) on [Spring Boot](https://spring.io/projects/spring-boot) and [Micronaut](https://micronaut.io/), paying the bills one `@Autowired` at a time. When the workday ends the JVM gets tucked in, and ZSH and Python come out to play, scripting anything that sits still long enough to be automated, up to and including the coffee machine. ☕ The newest arrival in the toolbox is [Rust](https://www.rust-lang.org), and while the borrow checker and I are still in couples therapy, the therapist says we're making real progress.
 
-All of this happens on Linux, where I've lived since the Slackware days when "dependency resolution" meant you, personally. These days I ride CachyOS, and somewhere behind me a homelab hums along, self-hosting way too many things because it's cheaper than the cloud, right? (narrator: it was not)
+All of this happens on Linux, and always has. I started back in the Slackware days, when “dependency resolution” meant staring at the terminal and grepping install logs until something confessed. These days I ride CachyOS, with a homelab humming away in the corner, self-hosting way too many things because it's cheaper than the cloud, right? (narrator: it was not)
 
 ## 🚀 Show & Tell
 
