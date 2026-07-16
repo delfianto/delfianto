@@ -14,31 +14,6 @@ All of this happens on Linux, and always has. I started back in the Slackware da
 
 Some toys I’ve been tinkering with, neatly organized into sections so it looks like there was a plan. There was no plan.
 
-### 🧩 Obsidian Plugins
-
-A note-taking app with two thousand community plugins clearly needed a few more of mine.
-
-| Plugin | What it does |
-| --- | --- |
-| [`advanced-infobox`](https://github.com/delfianto/advanced-infobox) | Wikipedia-style infoboxes for your notes. Basically a Fandom wiki minus the 47 ads. |
-| [`inkwell`](https://github.com/delfianto/inkwell) | Longform writing plugin for the novel I’m definitely finishing this year (source: me, every January). |
-| [`schema-form`](https://github.com/delfianto/schema-form) | Schema-driven modal forms, because typing frontmatter by hand is how you end up with `tags: [tag, tags, Tags, TAGS]`. |
-| [`smart-typography-refresh`](https://github.com/delfianto/smart-typography-refresh) | Curly quotes, em dashes, and ellipses as you type. Yes, I write my own em dashes — well, the plugin does, but it’s MY plugin. |
-
-### 🐧 Linux CLI Tools
-
-Over-engineered Rust solutions to problems a bash one-liner solved in 2009. No regrets.
-
-| Tool | What it does |
-| --- | --- |
-| [`zsh`](https://github.com/delfianto/zsh) | My ZSH config and helper scripts, aka the shell equivalent of a heavily modded Skyrim install. |
-| [`dotlinker`](https://github.com/delfianto/dotlinker) | Auto-symlinks my dotfiles. I spent a week automating a task I do once a year. Worth it. |
-| [`media-forge`](https://github.com/delfianto/media-forge) | Batch media converter that talks to ffmpeg so I never have to remember which of its 9,000 flags I actually need. |
-| [`zentools`](https://github.com/delfianto/zentools) | Tells my AMD Zen CPU whether to be a space heater or a responsible adult. ("EPP profile management," technically.) |
-| [`nvprime`](https://github.com/delfianto/nvprime) | Minimalistic game launcher for PRIME offloading. Politely wakes the NVIDIA dGPU from its nap whenever a game shows up. |
-| [`pika`](https://github.com/delfianto/pika) | Experimental memory scanner for Steam Proton games. Single-player only. I cheat, but I have honor. |
-| [`wsmr`](https://github.com/delfianto/wsmr) | Wayland Session Manager in Rust. Vowels sold separately. |
-
 ### 🐳 Docker & Self-Hosting
 
 Where uptime is a suggestion and every service is exactly one YAML indent away from disaster.
