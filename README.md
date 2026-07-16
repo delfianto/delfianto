@@ -32,10 +32,8 @@ Paying per token is scary, but buying GPUs is *an investment*. Meanwhile I yearn
 | --- | --- |
 | [`the-bannered-mare`](https://github.com/delfianto/the-bannered-mare) | “What if we rebuild SillyTavern on a modern stack, how hard could it be?” Turns out building the tavern is way harder than getting drunk in it. I used to be an adventurer like you, then I took a rewrite to the knee. |
 | [`tei-proxy`](https://github.com/delfianto/tei-proxy) | Lightweight proxy that teaches Open WebUI's reranker to speak fluent Hugging Face TEI. |
-| [`llama.rs`](https://github.com/delfianto/llama.rs) | Wraps llama.cpp in an Ollama-like API. We have Ollama at home. The Ollama at home: 🦀 |
 | [`ik_llama.cpp-docker`](https://github.com/delfianto/ik_llama.cpp-docker) | Zen 5 optimized ik_llama.cpp builds, squeezing tokens out of a CPU that never consented to any of this. |
 | [`sd-webui-forge-docker`](https://github.com/delfianto/sd-webui-forge-docker) | Stable Diffusion WebUI Forge in a Docker box. Infinite cat pictures, finite VRAM. |
-| [`opnsense-skills`](https://github.com/delfianto/opnsense-skills) | Skills for letting your Clanker configure and debug OPNsense firewall rules. What could possibly go wrong? |
 
 ## 🎲 Fun Shenanigans
 
