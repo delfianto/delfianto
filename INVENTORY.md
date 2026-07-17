@@ -52,7 +52,7 @@ _Last generated: 2026-07-17_
 | [`llama.rs`](https://github.com/delfianto/llama.rs) | Rust | Yes | Wraps llama.cpp in a OLLAMA like API |
 | [`opnsense-skills`](https://github.com/delfianto/opnsense-skills) | — | No | Use your Clanker to configure and debug OPNSense config and firewall rules |
 | [`sd-webui-forge-docker`](https://github.com/delfianto/sd-webui-forge-docker) | Dockerfile | Yes | Docker compose project for Stable Diffusion WebUI Forge Neo |
-| [`silly-skills`](https://github.com/delfianto/silly-skills) | Python | Yes | What the hell is even this thing? |
+| [`silly-skills`](https://github.com/delfianto/silly-skills) | Python | No | What the hell is even this thing? |
 | [`stash-mcp`](https://github.com/delfianto/stash-mcp) | Rust | Yes | MCP server for StashApp and StashDB |
 | [`tei-proxy`](https://github.com/delfianto/tei-proxy) | Rust | Yes | Lightweighy proxy to translates Open WebUI reranker request and response to Huggingface TEI |
 | [`the-bannered-mare`](https://github.com/delfianto/the-bannered-mare) | Python | Yes | Roleplay with a local or cloud model, gaze into the abyss and let the abyss stare back into you |
