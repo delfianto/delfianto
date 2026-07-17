@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "bash",
+      "args": [".agents/mcp/github-mcp-server.sh"]
+    }
+  }
+}

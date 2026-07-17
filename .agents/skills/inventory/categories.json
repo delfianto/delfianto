@@ -1,0 +1,43 @@
+{
+  "order": [
+    "Obsidian Plugins",
+    "Browser Extensions",
+    "Linux Utils",
+    "Docker & Self-Hosting",
+    "AI & Agents",
+    "Misc"
+  ],
+  "assignments": {
+    "advanced-infobox": "Obsidian Plugins",
+    "clanker-clicker-t9000": "Browser Extensions",
+    "clanker-media-dl": "Browser Extensions",
+    "compose": "Docker & Self-Hosting",
+    "compose-utils": "Docker & Self-Hosting",
+    "delfianto": "Misc",
+    "docker-conf": "Docker & Self-Hosting",
+    "dotfiles": "Linux Utils",
+    "dotlinker": "Linux Utils",
+    "frontmatter-mcp": "AI & Agents",
+    "ik_llama.cpp-build": "AI & Agents",
+    "inkwell": "Obsidian Plugins",
+    "llama.rs": "AI & Agents",
+    "media-forge": "Linux Utils",
+    "nlcrawl": "Misc",
+    "nvprime": "Linux Utils",
+    "opnsense-skills": "AI & Agents",
+    "pika": "Linux Utils",
+    "plex-rs": "Misc",
+    "schema-form": "Obsidian Plugins",
+    "sd-webui-forge-docker": "AI & Agents",
+    "silly-skills": "AI & Agents",
+    "smart-typography-refresh": "Obsidian Plugins",
+    "stash-mcp": "AI & Agents",
+    "stash-tools": "Misc",
+    "tei-proxy": "AI & Agents",
+    "the-bannered-mare": "AI & Agents",
+    "vicuna": "AI & Agents",
+    "wsmr": "Linux Utils",
+    "zentools": "Linux Utils",
+    "zsh": "Linux Utils"
+  }
+}
