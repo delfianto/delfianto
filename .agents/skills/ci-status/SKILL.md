@@ -29,6 +29,10 @@ python3 .agents/skills/ci-status/scripts/ci_status.py [--repo NAME ...] [--filte
   universe as `INVENTORY.md`).
 - `--repo` is repeatable to scope to specific repos.
 - `--filter failed` is the fast path for "what's broken right now".
+- The sweep itself runs through `.agents/scripts/batch.py`'s `run_batch` — parallel, and one
+  repo's API error shows up as that repo's status instead of killing the whole sweep. Extending
+  this script (or writing a new one that loops over repos) should go through `run_batch` too
+  rather than a hand-rolled loop; see AGENTS.md for why that's a hard rule here, not a preference.
 - `--json` for programmatic use (each row: `repo, workflow, status, conclusion, url, bucket`).
 
 `no-ci` means the repo has zero configured workflows (distinct from a workflow that hasn't run

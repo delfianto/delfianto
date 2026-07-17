@@ -10,6 +10,7 @@ _THIS = Path(__file__).resolve()
 AGENTS_DIR = _THIS.parents[3]
 
 sys.path.insert(0, str(AGENTS_DIR / "scripts"))
+from batch import run_batch
 from ghrepo import current_login, list_personal_repos, list_workflow_runs, require_auth
 
 EXCLUDE_PREFIXES = ("saas",)
@@ -26,6 +27,8 @@ class RepoStatus:
 
     @property
     def bucket(self) -> str:
+        if self.status == "error":
+            return "error"
         if self.status is None:
             return "no-ci"
         if self.status != "completed":
@@ -51,8 +54,23 @@ def latest_status(login: str, repo: str) -> RepoStatus:
     )
 
 
-def collect(login: str, repos: list[str]) -> list[RepoStatus]:
-    return [latest_status(login, repo) for repo in repos]
+def collect(login: str, repos: list[str], *, max_workers: int = 6) -> list[RepoStatus]:
+    results = run_batch(repos, lambda repo: latest_status(login, repo), max_workers=max_workers)
+    rows: list[RepoStatus] = []
+    for result in results:
+        if result.ok and result.value is not None:
+            rows.append(result.value)
+        else:
+            rows.append(
+                RepoStatus(
+                    repo=result.repo,
+                    workflow=None,
+                    status="error",
+                    conclusion=result.error,
+                    url=None,
+                )
+            )
+    return rows
 
 
 def render_table(rows: list[RepoStatus]) -> str:
@@ -75,7 +93,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--filter",
-        choices=["all", "success", "failed", "pending", "no-ci"],
+        choices=["all", "success", "failed", "pending", "no-ci", "error"],
         default="all",
     )
     parser.add_argument("--json", action="store_true", help="Emit JSON instead of a table")

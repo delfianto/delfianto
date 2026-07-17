@@ -28,7 +28,8 @@ This:
    present get a best-effort guess (keyword/language heuristics) and are **appended** to
    `categories.json` so the guess is stable across runs.
 3. Checks CI presence per repo via `GET /repos/{owner}/{repo}/actions/workflows`
-   (`total_count > 0`).
+   (`total_count > 0`) — run in parallel across repos through `.agents/scripts/batch.py`'s
+   `run_batch`, not a sequential loop.
 4. Rewrites `INVENTORY.md`.
 
 If the `github` MCP server is connected, `search_repositories` (e.g. `user:delfianto fork:false

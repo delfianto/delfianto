@@ -41,7 +41,9 @@ once instead of checking repo by repo:
 python3 .agents/skills/pr-manage/scripts/renovate_prs.py [--repo NAME ...] [--update-type major|minor|patch|unclassified|all] [--json]
 ```
 
-- No `--repo` → sweeps every repo in the same universe as `INVENTORY.md`.
+- No `--repo` → sweeps every repo in the same universe as `INVENTORY.md`, via
+  `.agents/scripts/batch.py`'s `run_batch` (parallel, one repo's failure doesn't kill the sweep —
+  it falls back to a reduced field set first, and only shows up as an error if that also fails).
 - `update_type` classification is **best-effort**: it reads Renovate's own `major`/`minor`/
   `patch` labels if the repo's `renovate.json` adds them (many don't by default — check
   `renovate` skill if you want that enabled repo-wide). PRs without those labels come

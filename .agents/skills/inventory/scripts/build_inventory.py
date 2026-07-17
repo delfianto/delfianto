@@ -12,6 +12,7 @@ AGENTS_DIR = _THIS.parents[3]
 SKILL_DIR = _THIS.parents[1]
 
 sys.path.insert(0, str(AGENTS_DIR / "scripts"))
+from batch import run_batch
 from ghrepo import RepoInfo, current_login, has_ci, list_personal_repos, require_auth
 
 CATEGORIES_FILE = SKILL_DIR / "categories.json"
@@ -50,7 +51,18 @@ def save_categories(order: list[str], assignments: dict[str, str]) -> None:
     CATEGORIES_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
 
 
-def render(login: str, order: list[str], grouped: dict[str, list[RepoInfo]]) -> str:
+def fetch_ci_map(login: str, repos: list[RepoInfo], *, max_workers: int = 6) -> dict[str, bool]:
+    names = [r.name for r in repos]
+    results = run_batch(names, lambda name: has_ci(login, name), max_workers=max_workers)
+    return {r.repo: bool(r.value) for r in results if r.ok}
+
+
+def render(
+    login: str,
+    order: list[str],
+    grouped: dict[str, list[RepoInfo]],
+    ci_map: dict[str, bool],
+) -> str:
     lines = [
         "# Repository Inventory",
         "",
@@ -73,7 +85,7 @@ def render(login: str, order: list[str], grouped: dict[str, list[RepoInfo]]) -> 
         lines.append("| Name | Language | Has CI | Description |")
         lines.append("| --- | --- | --- | --- |")
         for repo in sorted(repos_in_category, key=lambda r: r.name.lower()):
-            ci = "Yes" if has_ci(login, repo.name) else "No"
+            ci = "Yes" if ci_map.get(repo.name, False) else "No"
             row = f"| [`{repo.name}`]({repo.url}) | {repo.language} | {ci} | {repo.description} |"
             lines.append(row)
         lines.append("")
@@ -100,7 +112,8 @@ def build(login: str, output: Path) -> list[str]:
             order.append(category)
 
     save_categories(order, assignments)
-    output.write_text(render(login, order, grouped))
+    ci_map = fetch_ci_map(login, repos)
+    output.write_text(render(login, order, grouped, ci_map))
     return newly_guessed
 
 

@@ -62,7 +62,7 @@ _Last generated: 2026-07-17_
 
 | Name | Language | Has CI | Description |
 | --- | --- | --- | --- |
-| [`delfianto`](https://github.com/delfianto/delfianto) | — | No | My GitHub profile |
+| [`delfianto`](https://github.com/delfianto/delfianto) | Python | No | My GitHub profile |
 | [`nlcrawl`](https://github.com/delfianto/nlcrawl) | Python | Yes | Auto crawler and downloader for a very peculiar material (⌐□_□) |
 | [`plex-rs`](https://github.com/delfianto/plex-rs) | Rust | Yes | Plex API bindings in Rust, very much WIP |
 | [`stash-tools`](https://github.com/delfianto/stash-tools) | TypeScript | Yes | Local web application for various silly StashApp batch operations |

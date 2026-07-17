@@ -17,6 +17,7 @@ CLAUDE.md                 -> AGENTS.md (symlink)
 .agents/
   pyproject.toml           ruff + basedpyright config for everything under .agents/
   scripts/ghrepo.py         shared stdlib helpers (gh CLI wrapper, repo listing, project-type detection)
+  scripts/batch.py          shared batch-execution harness for any "do X across every repo" script
   mcp/github-mcp-server.sh  GitHub MCP server launcher, token from `gh auth token`
   skills/<name>/SKILL.md    one directory per skill, harness-agnostic
 .mcp.json                  Claude Code project MCP config
@@ -71,15 +72,29 @@ assumes a specific harness's tool-calling conventions.
   these, but none of them do. Every skill that touches one of these explicitly says to confirm
   with the user before each call. `release.py` goes further and defaults to a dry run; nothing
   writes to disk or the network without `--execute`.
-- **Python scripts are stdlib-only** and live either at `.agents/scripts/ghrepo.py` (shared) or
-  under a skill's own `scripts/`. They shell out to `gh` (already required, already
-  authenticated) rather than reimplementing GitHub's API/auth/pagination by hand. All of them
-  pass `ruff check`, `ruff format --check`, and `basedpyright` under `.agents/pyproject.toml` —
-  run those three from `.agents/` before considering a script change done:
+- **Python scripts are stdlib-only** and live either at `.agents/scripts/` (shared: `ghrepo.py`,
+  `batch.py`) or under a skill's own `scripts/`. They shell out to `gh` (already required,
+  already authenticated) rather than reimplementing GitHub's API/auth/pagination by hand. All of
+  them pass `ruff check`, `ruff format --check`, and `basedpyright` under `.agents/pyproject.toml`
+  — run those three from `.agents/` before considering a script change done:
 
   ```bash
   cd .agents && ruff check . && ruff format --check . && basedpyright .
   ```
+- **Any "for each repo, do X" loop goes through `.agents/scripts/batch.py`'s `run_batch`, not a
+  hand-rolled `for` loop.** This isn't a style preference — every hand-rolled version of this
+  loop written during this repo's early history had a real bug: zsh not word-splitting an
+  unquoted `for r in $repos` (silently ran once with the whole list as one repo name), a `jq
+  '.name'` on a 404 response returning the literal string `"null"` which is truthy in bash (every
+  repo false-positived as "has the file"), `status` colliding with a zsh builtin variable, and one
+  repo's permission error crashing an entire 31-repo sweep. `run_batch` fixes all of these at
+  once: it isolates failures per-repo (one repo raising never aborts the rest — captured in that
+  repo's `RepoResult.error` instead), runs with bounded concurrency instead of one-repo-at-a-time,
+  and returns results in a stable order regardless of completion order. `inventory`, `ci-status`,
+  and `pr-manage`'s Renovate sweep all use it; a new script that loops over repos should too.
+  `batch.py` also has a small standalone CLI for one-off checks that would otherwise become a
+  throwaway shell loop, e.g. `python3 .agents/scripts/batch.py .github/dependabot.yml` to see
+  which repos still have a given file.
 
 ## MCP servers
 

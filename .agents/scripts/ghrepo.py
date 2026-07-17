@@ -151,6 +151,18 @@ def list_pull_requests(
     return list(gh_json(*args))
 
 
+def path_exists_in_repo(owner: str, repo: str, path: str, *, ref: str | None = None) -> bool:
+    args = ["api", f"repos/{owner}/{repo}/contents/{path}"]
+    if ref:
+        args += ["-f", f"ref={ref}"]
+    result = subprocess.run(["gh", *args], capture_output=True, text=True)
+    if result.returncode == 0:
+        return True
+    if '"status":"404"' in result.stderr or "Not Found" in result.stderr:
+        return False
+    raise GhError(f"gh {' '.join(args)} failed: {result.stderr.strip()}")
+
+
 def detect_project_type(path: Path) -> ProjectType:
     if (path / "Cargo.toml").is_file():
         return "rust"

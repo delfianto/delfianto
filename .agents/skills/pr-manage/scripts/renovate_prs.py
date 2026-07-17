@@ -11,6 +11,7 @@ _THIS = Path(__file__).resolve()
 AGENTS_DIR = _THIS.parents[3]
 
 sys.path.insert(0, str(AGENTS_DIR / "scripts"))
+from batch import RepoResult, run_batch
 from ghrepo import GhError, current_login, list_personal_repos, list_pull_requests, require_auth
 
 EXCLUDE_PREFIXES = ("saas",)
@@ -52,29 +53,41 @@ def summarize_checks(pr: dict[str, Any]) -> str:
 REDUCED_FIELDS = "number,title,url,labels,mergeable"
 
 
-def collect(login: str, repos: list[str]) -> list[RenovatePr]:
-    results: list[RenovatePr] = []
-    for repo in repos:
-        try:
-            prs = list_pull_requests(login, repo, author=RENOVATE_AUTHOR, state="open")
-        except GhError as exc:
-            print(f"warning: {repo}: falling back to reduced fields ({exc})", file=sys.stderr)
-            prs = list_pull_requests(
-                login, repo, author=RENOVATE_AUTHOR, state="open", fields=REDUCED_FIELDS
-            )
-        for pr in prs:
-            results.append(
-                RenovatePr(
-                    repo=repo,
-                    number=pr["number"],
-                    title=pr["title"],
-                    update_type=classify_update_type(pr.get("labels", [])),
-                    mergeable=str(pr.get("mergeable", "UNKNOWN")),
-                    checks=summarize_checks(pr) if "statusCheckRollup" in pr else "unknown",
-                    url=pr["url"],
-                )
-            )
-    return results
+def fetch_repo_prs(login: str, repo: str) -> list[RenovatePr]:
+    try:
+        prs = list_pull_requests(login, repo, author=RENOVATE_AUTHOR, state="open")
+    except GhError as exc:
+        print(f"warning: {repo}: falling back to reduced fields ({exc})", file=sys.stderr)
+        prs = list_pull_requests(
+            login, repo, author=RENOVATE_AUTHOR, state="open", fields=REDUCED_FIELDS
+        )
+    return [
+        RenovatePr(
+            repo=repo,
+            number=pr["number"],
+            title=pr["title"],
+            update_type=classify_update_type(pr.get("labels", [])),
+            mergeable=str(pr.get("mergeable", "UNKNOWN")),
+            checks=summarize_checks(pr) if "statusCheckRollup" in pr else "unknown",
+            url=pr["url"],
+        )
+        for pr in prs
+    ]
+
+
+def collect(login: str, repos: list[str], *, max_workers: int = 6) -> list[RenovatePr]:
+    def report(result: RepoResult[list[RenovatePr]]) -> None:
+        if not result.ok:
+            print(f"warning: {result.repo}: {result.error}", file=sys.stderr)
+
+    results = run_batch(
+        repos, lambda repo: fetch_repo_prs(login, repo), max_workers=max_workers, on_result=report
+    )
+    prs: list[RenovatePr] = []
+    for result in results:
+        if result.ok and result.value:
+            prs.extend(result.value)
+    return prs
 
 
 def main() -> int:
