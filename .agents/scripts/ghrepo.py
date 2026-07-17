@@ -119,6 +119,12 @@ def get_run_log_failed(owner: str, repo: str, run_id: str) -> str:
     return gh("run", "view", run_id, "--repo", f"{owner}/{repo}", "--log-failed", check=False)
 
 
+PR_FIELDS = (
+    "number,title,author,headRefName,baseRefName,isDraft,mergeable,"
+    "statusCheckRollup,url,labels,createdAt"
+)
+
+
 def list_pull_requests(
     owner: str,
     repo: str,
@@ -126,6 +132,7 @@ def list_pull_requests(
     author: str | None = None,
     state: str = "open",
     limit: int = 50,
+    fields: str = PR_FIELDS,
 ) -> list[dict[str, Any]]:
     args = [
         "pr",
@@ -137,7 +144,7 @@ def list_pull_requests(
         "--limit",
         str(limit),
         "--json",
-        "number,title,author,headRefName,baseRefName,isDraft,mergeable,statusCheckRollup,url,labels,createdAt",
+        fields,
     ]
     if author:
         args += ["--author", author]

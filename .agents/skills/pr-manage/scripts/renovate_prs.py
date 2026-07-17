@@ -11,7 +11,7 @@ _THIS = Path(__file__).resolve()
 AGENTS_DIR = _THIS.parents[3]
 
 sys.path.insert(0, str(AGENTS_DIR / "scripts"))
-from ghrepo import current_login, list_personal_repos, list_pull_requests, require_auth
+from ghrepo import GhError, current_login, list_personal_repos, list_pull_requests, require_auth
 
 EXCLUDE_PREFIXES = ("saas",)
 RENOVATE_AUTHOR = "app/renovate"
@@ -49,10 +49,20 @@ def summarize_checks(pr: dict[str, Any]) -> str:
     return "pending"
 
 
+REDUCED_FIELDS = "number,title,url,labels,mergeable"
+
+
 def collect(login: str, repos: list[str]) -> list[RenovatePr]:
     results: list[RenovatePr] = []
     for repo in repos:
-        for pr in list_pull_requests(login, repo, author=RENOVATE_AUTHOR, state="open"):
+        try:
+            prs = list_pull_requests(login, repo, author=RENOVATE_AUTHOR, state="open")
+        except GhError as exc:
+            print(f"warning: {repo}: falling back to reduced fields ({exc})", file=sys.stderr)
+            prs = list_pull_requests(
+                login, repo, author=RENOVATE_AUTHOR, state="open", fields=REDUCED_FIELDS
+            )
+        for pr in prs:
             results.append(
                 RenovatePr(
                     repo=repo,
@@ -60,7 +70,7 @@ def collect(login: str, repos: list[str]) -> list[RenovatePr]:
                     title=pr["title"],
                     update_type=classify_update_type(pr.get("labels", [])),
                     mergeable=str(pr.get("mergeable", "UNKNOWN")),
-                    checks=summarize_checks(pr),
+                    checks=summarize_checks(pr) if "statusCheckRollup" in pr else "unknown",
                     url=pr["url"],
                 )
             )
