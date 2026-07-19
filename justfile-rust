@@ -1,0 +1,161 @@
+# Canonical justfile for personal Rust *binary* projects.
+#
+# Copy to each repo as `justfile`, then:
+#   1. set `bins` (space-separated binary names; one entry for single-bin)
+#   2. append project specials (symlinks, serve recipes, live tests, systemd, …)
+#   3. do NOT re-space `{{…}}` interpolations (`just --fmt` will try — reject it)
+#
+# Out of scope: pure libraries (e.g. plex-rs). Those have no install/compress path.
+#
+# Install layout:
+#   just install           → ~/.local/bin/<bin>     (no sudo)
+#   just install --system  → /usr/local/bin/<bin>   (sudo)
+# Every install packs with upx first (skips if already packed).
+#
+# Policy notes (locked):
+# - nvprime: bins := "nvprime nvprime-sys" (always same dir). No install.sh —
+#   binaries via this baseline only; unit/dbus files stay in-tree for manual use.
+# - compose-utils: bins := "composectl"; keep systemd/install.sh as extra recipes.
+# - wsmr: baseline recipe names win; container/coverage recipes stay as extras.
+
+# ---------------------------------------------------------------------------
+# Project knobs — edit these per repo
+# ---------------------------------------------------------------------------
+
+# Space-separated cargo binary names (must match [[bin]].name / package default).
+# Single-bin examples:  bins := "zentools"
+# Multi-bin example:    bins := "nvprime nvprime-sys"
+bins := "REPLACE_ME"
+
+bin_dir := env_var("HOME") / ".local/bin"
+sys_dir := "/usr/local/bin"
+
+# ---------------------------------------------------------------------------
+# Baseline recipes — keep identical across repos unless a special is documented
+# ---------------------------------------------------------------------------
+
+# List available recipes
+default:
+    @just --list
+
+# Build release binaries
+build:
+    cargo build --release
+
+# Run unit/integration tests that do not need live external services
+test:
+    cargo test
+
+# Auto-format the tree
+fmt:
+    cargo fmt --all
+
+# Check formatting (CI gate)
+fmt-check:
+    cargo fmt --all -- --check
+
+# Lint — warnings denied (CI gate)
+lint:
+    cargo clippy --all-targets --all-features -- -D warnings
+
+# Full local gate, mirrors CI (fmt + clippy + tests)
+check: fmt-check lint test
+
+# Compress every release binary with upx (skips a binary if already packed)
+compress: build
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if ! command -v upx >/dev/null 2>&1; then
+        echo "compress: upx not found in PATH" >&2
+        exit 1
+    fi
+    for b in {{bins}}; do
+        path="target/release/$b"
+        if [ ! -f "$path" ]; then
+            echo "compress: missing $path (is bins= correct?)" >&2
+            exit 1
+        fi
+        upx -t "$path" >/dev/null 2>&1 || upx --best --lzma "$path"
+        echo "compressed $path"
+    done
+
+# Install into ~/.local/bin (default) or /usr/local/bin (--system, via sudo)
+install *flags: compress
+    #!/usr/bin/env bash
+    set -euo pipefail
+    dir="{{bin_dir}}"
+    sudo=""
+    for f in {{flags}}; do
+        case "$f" in
+            --system) dir="{{sys_dir}}"; sudo="sudo" ;;
+            *) echo "install: unknown flag '$f' (only --system is supported)" >&2; exit 1 ;;
+        esac
+    done
+    for b in {{bins}}; do
+        $sudo install -Dm755 "target/release/$b" "$dir/$b"
+        echo "installed $dir/$b"
+    done
+
+# Remove installed binaries (pass --system for /usr/local/bin via sudo)
+uninstall *flags:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    dir="{{bin_dir}}"
+    sudo=""
+    for f in {{flags}}; do
+        case "$f" in
+            --system) dir="{{sys_dir}}"; sudo="sudo" ;;
+            *) echo "uninstall: unknown flag '$f' (only --system is supported)" >&2; exit 1 ;;
+        esac
+    done
+    for b in {{bins}}; do
+        $sudo rm -f "$dir/$b"
+        echo "removed $dir/$b"
+    done
+
+# Remove build artifacts
+clean:
+    cargo clean
+
+# ---------------------------------------------------------------------------
+# Optional specials — copy only what the repo needs (examples, not active)
+# ---------------------------------------------------------------------------
+#
+# # --- upx size report (vicuna had build-tiny) ---
+# build-tiny: compress
+#     #!/usr/bin/env bash
+#     set -euo pipefail
+#     for b in {{bins}}; do ls -lh "target/release/$b"; done
+#
+# # --- multicall / alias symlinks (zentools, frontmatter-mcp) ---
+# # After install's install -Dm755 loop, add e.g.:
+# #   for tool in zen-epp zen-smu zen-mem; do
+# #       $sudo ln -sf "{{bins}}" "$dir/$tool"   # only works for single-bin
+# #   done
+# # Prefer hardcoding the primary binary name in the symlink target when bins
+# # has more than one entry. Mirror removals in uninstall.
+#
+# # --- run helpers (media-forge, pika, nvprime client) ---
+# run *args:
+#     cargo run --release -- {{args}}
+#
+# # --- debug build (only if someone still wants it; not the default) ---
+# build-debug:
+#     cargo build
+#
+# # --- bespoke test gate (llama.rs: exclude live tests from `test`) ---
+# test:
+#     cargo test --lib --test cli --test api
+#
+# test-live:
+#     cargo test --test live_server
+#
+# # --- systemd / daemon extras (nvprime, compose-utils) live *beside* baseline
+# # install, they do not replace it. Example:
+# install-service: install
+#     ./system/install.sh install-service
+#
+# # --- container / coverage (wsmr) live *beside* baseline; keep recipe names
+# # that already mean something else in that repo only if they don't collide.
+# # Prefer renaming local `check`/`lint` aliases if they conflict with baseline
+# # semantics (baseline `check` = fmt-check + lint + test).
