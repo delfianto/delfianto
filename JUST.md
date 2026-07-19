@@ -101,19 +101,20 @@ Source of truth: **`justfile-rust`**. Summary of house style:
 
 | project | status | notes |
 | --- | --- | --- |
-| justfile-rust (meta) | ✅ present | not yet committed necessarily |
+| justfile-rust (meta) | ✅ pushed | `delfianto` `6fcaeab` |
 | filename Task A | ✅ | three renames pushed |
-| zentools | 🔧 baseline-ish locally | `07d5a89` ahead of origin — align to template + push |
-| frontmatter-mcp | 🔧 retrofit | add fmt pair; `check: fmt-check lint test`; upx already |
-| stash-mcp | 🔧 retrofit | same as frontmatter |
-| media-forge | 🔧 full adopt | install semantics change |
-| vicuna | 🔧 full adopt | fix `bin` path → name |
-| pika | 🔧 full adopt | `env_var`, `--system`, full lint |
-| llama.rs | 🔧 full adopt | `build` debug→release |
-| nvprime | 🔧 full adopt + **delete install.sh** | both bins; option A |
-| wsmr | 🔧 full adopt | rename colliding recipes |
-| compose-utils | 🔧 full adopt + keep install.sh extras | bin = `composectl` |
-| tei-proxy / dotlinker | 🔧 if binary | confirm + adopt |
+| zentools | ✅ | multicall symlinks; rebased + pushed |
+| frontmatter-mcp | ✅ | `frontmatter-mcp` symlink + fmt-gated check |
+| stash-mcp | ✅ | `test-integration` / `test-all` |
+| pika | ✅ | serve/ps/help helpers |
+| vicuna | ✅ | `build-tiny`; bin name fixed |
+| media-forge | ✅ | `RUSTFLAGS=native`, `run` |
+| llama.rs | ✅ | non-live `test`; live recipes kept |
+| compose-utils | ✅ | `composectl` + `install-systemd` → install.sh |
+| nvprime | ✅ | multi-bin; **install.sh removed** (option A) |
+| wsmr | ✅ | baseline names; `typecheck` + container extras |
+| tei-proxy | ✅ | new justfile |
+| dotlinker | ✅ | bins=`dot-rs` |
 | plex-rs | ⏭ skip | library |
 
 ---
