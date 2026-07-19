@@ -3,19 +3,33 @@
 #
 # Copy to:  .github/workflows/ci.yml
 #
-# Gates (must match justfile recipes + a full compile):
-#   just fmt-check   → cargo fmt --all -- --check
-#   just lint        → cargo clippy --all-targets --all-features -- -D warnings
-#   cargo build --all-targets   (not `just build` — that is release-only)
-#   just test        → project test recipe (may exclude live/integration)
+# Contract (must match JUST.md R8 + justfile-rust baseline):
 #
-# Do NOT collapse to `just check` alone if you want separate step annotations
-# in the Actions UI — `just check` is still the right local one-shot.
+#   just format --check-only   rustfmt check          (not `fmt-check` / `fmt`)
+#   just lint                  clippy -D warnings
+#   cargo build --all-targets  compile every target
+#   just test                  safe unit gate only    (test_unit; no flags)
 #
-# Specials:
-# - System deps (media-forge, …): keep the apt step below the rust-cache step.
-# - Libraries without a justfile (plex-rs): use raw cargo commands, not this file.
-# - Extra workflows (docker, release, wsmr container jobs) stay separate.
+# Why not `just build` in CI?
+#   Default `just build` = host-native release (`-C target-cpu=native`) + upx.
+#   That needs upx on the runner, is non-portable, and is not an --all-targets
+#   compile. CI compile gate stays raw cargo. Local ship path stays `just build`
+#   / `just install`.
+#
+# Why not `just full-gate` alone?
+#   full-gate = format --check-only + lint + test (correct local one-shot).
+#   Split steps keep separate annotations in the Actions UI. full-gate also
+#   omits the --all-targets compile — CI keeps that extra cargo step.
+#
+# Never in default CI:
+#   just test --integration / --run-all   (live services / credentials)
+#   just build                            (native + upx)
+#   just build --debug                    (not --all-targets)
+#
+# Policy: JUST.md + justfile-rust (rules → baseline → layers → exceptions).
+# - System deps (media-forge, …): uncomment the apt step below rust-cache.
+# - Libraries without a justfile (plex-rs): raw cargo only — do not use this file.
+# - Exception workflows (docker, release, wsmr container jobs) stay separate.
 
 name: ci
 
@@ -49,8 +63,8 @@ jobs:
       #     sudo apt-get update
       #     sudo apt-get install -y <packages>
 
-      - name: fmt
-        run: just fmt-check
+      - name: format
+        run: just format --check-only
 
       - name: lint
         run: just lint
