@@ -1,0 +1,62 @@
+# Canonical GitHub Actions CI for personal Rust *binary* projects that ship
+# a `justfile` from `justfile-rust`.
+#
+# Copy to:  .github/workflows/ci.yml
+#
+# Gates (must match justfile recipes + a full compile):
+#   just fmt-check   → cargo fmt --all -- --check
+#   just lint        → cargo clippy --all-targets --all-features -- -D warnings
+#   cargo build --all-targets   (not `just build` — that is release-only)
+#   just test        → project test recipe (may exclude live/integration)
+#
+# Do NOT collapse to `just check` alone if you want separate step annotations
+# in the Actions UI — `just check` is still the right local one-shot.
+#
+# Specials:
+# - System deps (media-forge, …): keep the apt step below the rust-cache step.
+# - Libraries without a justfile (plex-rs): use raw cargo commands, not this file.
+# - Extra workflows (docker, release, wsmr container jobs) stay separate.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: extractions/setup-just@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+
+      # Optional — only for crates that need native libs at build time:
+      # - name: System build dependencies
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y <packages>
+
+      - name: fmt
+        run: just fmt-check
+
+      - name: lint
+        run: just lint
+
+      - name: build
+        run: cargo build --all-targets --verbose
+
+      - name: test
+        run: just test

@@ -160,3 +160,8 @@ gh run watch "$(gh run list --branch main --limit 1 --json databaseId -q '.[0].d
 - zentools local commit renames binary `zen`→`zentools` with multicall shortcuts; needs template align + push.
 - llama.rs `test` must stay non-live; `check` uses that `test`.
 - compose-utils binary name is **`composectl`** (package name `compose`).
+
+## CI template
+
+Canonical workflow: `ci-rust` → copy to `.github/workflows/ci.yml`.
+Binary repos call `just fmt-check` / `just lint` / `just test` plus `cargo build --all-targets`. Libraries without a justfile (plex-rs) stay on raw cargo.
